@@ -155,7 +155,7 @@ streznik.post('/izpisiRacunBaza', function(zahteva, odgovor) {
       strankaIzRacuna(polja.seznamRacunov,function(customer){
         pesmiIzRacuna(polja.seznamRacunov, function(songs){
           odgovor.setHeader("content-type","text/xml");
-          odgovor.render("eslog", {vizualiziraj:true, postavkeRacuna:songs, stranke:customer[0]});
+          odgovor.render("eslog", {vizualiziraj:true, postavkeRacuna:songs, customer:customer});
         })
       })
     }
