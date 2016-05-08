@@ -175,7 +175,7 @@ streznik.get('/izpisiRacun', function(zahteva, odgovor) {
 })
 
 // Vrni stranke iz podatkovne baze
-var vrniStranke = function(user,callback) {
+var vrniStranke = function(callback) {
   pb.all("SELECT * FROM Customer",
     function(napaka, vrstice) {
       callback(napaka, vrstice);
