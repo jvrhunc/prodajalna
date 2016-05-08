@@ -164,7 +164,7 @@ streznik.get('/izpisiRacun/:oblika', function(zahteva, odgovor) {
       odgovor.render('eslog', {
         vizualiziraj: zahteva.params.oblika == 'html' ? true : false,
         postavkeRacuna: pesmi
-      })  
+      })
     }
   })
 })
@@ -175,7 +175,7 @@ streznik.get('/izpisiRacun', function(zahteva, odgovor) {
 })
 
 // Vrni stranke iz podatkovne baze
-var vrniStranke = function(callback) {
+var vrniStranke = function(user,callback) {
   pb.all("SELECT * FROM Customer",
     function(napaka, vrstice) {
       callback(napaka, vrstice);
